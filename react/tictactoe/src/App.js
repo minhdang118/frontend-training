@@ -8,12 +8,6 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-function SquareGen({ squareIdx }) {
-  return (
-    <Square value={squares[squareIdx]} onSquareClick={() => handleClick(squareIdx)} />
-  )
-}
-
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
