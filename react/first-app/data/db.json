@@ -1,0 +1,46 @@
+{
+    "books": [
+        {
+            "title": "Republic",
+            "genre": "Philosophy", 
+            "author": "Plato", 
+            "id": 1
+        },
+        { 
+            "title": "The Da Vinci Code", 
+            "genre": "Thriller", 
+            "author": "Dan Brown", 
+            "id": 2 
+        },
+        { 
+            "title": "Start With Why", 
+            "genre": "Self-help", 
+            "author": "Simon Sinek", 
+            "id": 3 
+        },
+        { 
+            "title": "Iliad", 
+            "genre": "Epic", 
+            "author": "Homer", 
+            "id": 4 
+        },
+        { 
+            "title": "Digital Fortress", 
+            "genre": "Thriller", 
+            "author": "Dan Brown", 
+            "id": 5 
+        },
+        { 
+            "title": "Deception Point", 
+            "genre": "Thriller", 
+            "author": "Dan Brown", 
+            "id": 6 
+        },
+        { 
+            "title": "Angels and Demons", 
+            "genre": "Thriller", 
+            "author": "Dan Brown", 
+            "id": 7 
+        }
+    ]
+}
