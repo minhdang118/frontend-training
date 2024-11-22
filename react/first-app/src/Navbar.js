@@ -8,7 +8,7 @@ const Navbar = () => {
                     color: "white",
                     backgroundColor: "#f1356d",
                     borderRadius: "8px",
-                }}>New Component</a>
+                }}>New Book</a>
             </div>
         </nav>
     );
