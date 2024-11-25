@@ -34,7 +34,7 @@
   padding: 20px;
 }
 
-/* blog previews / list */
+/* book previews / list */
 .book-preview {
   padding: 10px 16px;
   margin: 20px 0;
@@ -47,4 +47,25 @@
   font-size: 20px;
   color: #f1356d;
   margin-bottom: 8px;
+}
+.book-preview a {
+  text-decoration: none;
+}
+
+/* book details page */
+.book-details h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.book-details div {
+  margin: 20px 0;
+}
+.book-details button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }
