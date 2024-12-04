@@ -1,7 +1,8 @@
 const TaskList = ({tasks, title}) => {
+
     return (
         <div className="task-list">
-            <h3>{title}</h3>
+            <h2>{title}</h2>
             {tasks.map((task) => (
                 <div className="task-preview" key={task.id}>
                     <h4>{task.name}</h4>

@@ -1,18 +1,18 @@
 export const clearStorage = (key) => {
     if (key) {
-      sessionStorage.removeItem(key);
+      localStorage.removeItem(key);
     } else {
-      sessionStorage.clear();
+      localStorage.clear();
     }
   };
   
   export const getFromStorage = (key) => {
-    const item = window.sessionStorage.getItem(key);
+    const item = localStorage.getItem(key);
     if (item) {
       return JSON.parse(item);
     }
   };
   
   export const saveToStorage = (key, item) => {
-    window.sessionStorage.setItem(key, JSON.stringify(item));
+    localStorage.setItem(key, JSON.stringify(item));
   };

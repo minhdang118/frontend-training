@@ -1,22 +1,29 @@
 import TaskList from "./TaskList";
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import { clearStorage, getFromStorage, saveToStorage } from "./utils/storage";
+import NewTask from "./NewTask";
 
 const Home = () => {
-    const [tasks, setTasks] = useState([
-        {id: 1, name: "Read a paper", deadline: "Dec 07"},
-        {id: 2, name: "Go for a run", deadline: "Dec 08"},
-        {id: 3, name: "Write an essay", deadline: "Dec 10"},
-        {id: 4, name: "Repair glasses", deadline: "Dec 13"},
-        {id: 5, name: "Fix lights", deadline: "Dec 14"}
-    ]);
+    let storedTasks = getFromStorage("tasks");
+    if (!storedTasks) {
+        storedTasks = [];
+    }
+    const [tasks, setTasks] = useState(storedTasks);
 
-    
+    const handleClick = () => {
+        clearStorage();
+        setTasks([]);
+    }
 
+    useEffect(() => {
+        saveToStorage("tasks", tasks);
+    }, [tasks]);
 
     return (
         <div className="home">
-            <h2>Tasks</h2>
+            <NewTask tasks={tasks} setTasks={setTasks}/>
             <TaskList tasks={tasks} title="All Tasks" />
+            <button onClick={handleClick}>Clear All Tasks!</button>
         </div>
     );
 }
