@@ -1,6 +1,6 @@
 import TaskList from "./TaskList";
 import {useState, useEffect} from "react";
-import { clearStorage, getFromStorage, saveToStorage } from "./utils/storage";
+import { clearStorage, getFromStorage, saveToStorage } from "./utils/helpers";
 import NewTask from "./NewTask";
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
     }
     const [tasks, setTasks] = useState(storedTasks);
 
-    const handleClick = () => {
+    const handleClearAll = () => {
         clearStorage();
         setTasks([]);
     }
@@ -22,8 +22,8 @@ const Home = () => {
     return (
         <div className="home">
             <NewTask tasks={tasks} setTasks={setTasks}/>
-            <TaskList tasks={tasks} title="All Tasks" />
-            <button onClick={handleClick}>Clear All Tasks!</button>
+            <TaskList tasks={tasks} setTasks={setTasks} title="All Tasks" />
+            <button onClick={handleClearAll}>Clear All</button>
         </div>
     );
 }

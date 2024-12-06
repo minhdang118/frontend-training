@@ -1,12 +1,18 @@
 import {useState} from "react";
+import { stringToHash } from "./utils/helpers";
+
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const NewTask = ({tasks, setTasks}) => {
     const [name, setName] = useState("");
-    const [deadline, setDeadline] = useState("");
+    const [deadline, setDeadline] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const new_task = {name, deadline}
+        const id = stringToHash(name);
+        const new_task = {id, name, deadline}
         setTasks([...tasks, new_task]);
         setName("");
         setDeadline("");
@@ -23,6 +29,13 @@ const NewTask = ({tasks, setTasks}) => {
                 onChange={(e) => setName(e.target.value)}
                  />
                  <label>Deadline: </label>
+                 {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker 
+                        required
+                        value={deadline}
+                        onChange={(newDate) => setDeadline(newDate)}
+                    />
+                </LocalizationProvider> */}
                  <input
                 type="text"
                 required
